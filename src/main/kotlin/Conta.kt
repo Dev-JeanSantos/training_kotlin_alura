@@ -1,9 +1,9 @@
-open class Conta(
+abstract class Conta(
     var titular: String,
     var numero: Int
 ) {
     var saldo = 0.0
-        private set
+        protected set
 
     fun deposita(valor: Double) {
         println("------Movimentação de Depósito------")
@@ -11,16 +11,7 @@ open class Conta(
         println("Valor Depósito: ${valor}")
     }
 
-    open fun saque(valor: Double) {
-        println("------Movimentação de Saque------")
-        if (saldo >= valor) {
-            saldo -= valor
-            println("Valor Saque: ${valor}")
-            println("Saque efetuado com sucesso!")
-        } else {
-            println("Voce não possui saldo suficiente!")
-        }
-    }
+    abstract fun saque(valor: Double)
 
     fun tranfere(valor: Double, contaDestino: Conta): Boolean {
 

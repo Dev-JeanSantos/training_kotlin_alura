@@ -1,8 +1,8 @@
-fun testaComportamentoCompras() {
-    var contaJean = Conta(titular = "Jean Santos", numero = 77320)
+fun testaComportamentoContas() {
+    var contaJean = ContaCorrente(titular = "Jean Santos", numero = 77320)
     contaJean.deposita(5000.00)
 
-    var contaCamilla = Conta(titular = "Camilla Duarte", numero = 56972)
+    var contaCamilla = ContaPoupanca(titular = "Camilla Duarte", numero = 56972)
     contaCamilla.deposita(2300.00)
 
     print("Nome do Titular: ")
@@ -45,7 +45,7 @@ fun testaComportamentoCompras() {
     println("-----------------------")
     println("-----------------------")
 
-    if (contaJean.tranfere(4850.00, contaCamilla)) {
+    if (contaJean.tranfere(50.00, contaCamilla)) {
         println("Transferência efetuada com sucesso")
     } else {
         println("Falha na Transferência!")
