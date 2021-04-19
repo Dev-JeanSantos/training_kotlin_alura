@@ -78,11 +78,11 @@ fun testaFuncionarios() {
     println("Participação Anual dos Lucros: ${analistaMaria.plr}")
 
 
-//    var calculador = CalculadoraBonificacao()
-//    calculador.registra(funcionarioAlex)
-//    calculador.registra(gerenteMarcos)
-//    calculador.registra(gerentePedro)
-////    calculador.registra(diretoraMarcia)
-//
-//    println("Total de Bonificações a todos funcionarios: ${calculador.total}")
+    var calculador = CalculadoraBonificacao()
+    calculador.registra(funcionarioAlex)
+    calculador.registra(gerenteMarcos)
+    calculador.registra(gerentePedro)
+    calculador.registra(diretoraMarcia)
+
+    println("Total de Bonificações a todos funcionarios: ${calculador.total}")
 }
