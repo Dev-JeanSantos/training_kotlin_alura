@@ -10,7 +10,7 @@ fun main() {
     println("Nome: ${funcionarioAlex.nome}")
     println("Cpf: ${funcionarioAlex.cpf}")
     println("Salario: ${funcionarioAlex.salario}")
-    println("Bonificação: ${funcionarioAlex.bonificacao()}")
+    println("Bonificação: ${funcionarioAlex.bonificacao}")
 
 
     val gerentePedro = Gerente(
@@ -23,7 +23,7 @@ fun main() {
     println("Nome: ${gerentePedro.nome}")
     println("Cpf: ${gerentePedro.cpf}")
     println("Salario: ${gerentePedro.salario}")
-    println("Bonificação: ${gerentePedro.bonificacao()}")
+    println("Bonificação: ${gerentePedro.bonificacao}")
 
     if(gerentePedro.autentica(123456)){
             println("Autenticação realizada com sucesso!")
@@ -41,7 +41,7 @@ fun main() {
     println("Nome: ${gerenteMarcos.nome}")
     println("Cpf: ${gerenteMarcos.cpf}")
     println("Salario: ${gerenteMarcos.salario}")
-    println("Bonificação: ${gerenteMarcos.bonificacao()}")
+    println("Bonificação: ${gerenteMarcos.bonificacao}")
 
     if(gerenteMarcos.autentica(123456)){
             println("Autenticação realizada com sucesso!")
@@ -60,7 +60,7 @@ fun main() {
     println("Nome: ${diretoraMarcia.nome}")
     println("Cpf: ${diretoraMarcia.cpf}")
     println("Salario: ${diretoraMarcia.salario}")
-    println("Bonificação: ${diretoraMarcia.bonificacao()}")
+    println("Bonificação: ${diretoraMarcia.bonificacao}")
     println("Participação Anual dos Lucros: ${diretoraMarcia.plr}")
 
 }
