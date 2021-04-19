@@ -1,9 +1,10 @@
 import kotlin.math.truncate
 
-class Gerente( nome: String,
-               cpf: String,
-               salario: Double,
-              val senha: Int)
+class Diretor(nome: String,
+              cpf: String,
+              salario: Double,
+              val senha: Int,
+              val plr: Double)
     //Herança de funcionário
     :Funcionario(
     nome = nome,

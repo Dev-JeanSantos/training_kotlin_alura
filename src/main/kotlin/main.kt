@@ -49,6 +49,20 @@ fun main() {
             println("Falha na Autenticação")
     }
 
+    val diretoraMarcia = Diretor(
+        nome = "Marcia Santos",
+        cpf = "333.333.333-33",
+        salario = 10000.00,
+        senha = 54321,
+        plr = 8000.00
+    )
+    println("-------------Dados do Diretor---------------")
+    println("Nome: ${diretoraMarcia.nome}")
+    println("Cpf: ${diretoraMarcia.cpf}")
+    println("Salario: ${diretoraMarcia.salario}")
+    println("Bonificação: ${diretoraMarcia.bonificacao()}")
+    println("Participação Anual dos Lucros: ${diretoraMarcia.plr}")
+
 }
 
 
