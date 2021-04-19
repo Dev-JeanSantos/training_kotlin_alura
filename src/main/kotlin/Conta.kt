@@ -1,4 +1,4 @@
-class Conta(
+open class Conta(
     var titular: String,
     var numero: Int
 ) {
@@ -8,12 +8,14 @@ class Conta(
     fun deposita(valor: Double) {
         println("------Movimentação de Depósito------")
         this.saldo += valor
+        println("Valor Depósito: ${valor}")
     }
 
-    fun saque(valor: Double) {
+    open fun saque(valor: Double) {
         println("------Movimentação de Saque------")
         if (saldo >= valor) {
             saldo -= valor
+            println("Valor Saque: ${valor}")
             println("Saque efetuado com sucesso!")
         } else {
             println("Voce não possui saldo suficiente!")
