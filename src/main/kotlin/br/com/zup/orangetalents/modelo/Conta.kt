@@ -1,4 +1,4 @@
-package modelo
+package br.com.zup.orangetalents.modelo
 
 abstract class Conta(
     var titular: String,

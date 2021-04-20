@@ -1,4 +1,4 @@
-package modelo
+package br.com.zup.orangetalents.modelo
 
 class CalculadoraBonificacao {
 
@@ -8,10 +8,10 @@ class CalculadoraBonificacao {
     fun registra(funcionario: Funcionario){
         this.total += funcionario.bonificacao
     }
-//    fun registra(gerente: modelo.Gerente){
+//    fun registra(gerente: br.com.zup.orangetalents.modelo.Gerente){
 //        this.total += gerente.bonificacao
 //    }
-//    fun registra(diretor: modelo.Diretor){
+//    fun registra(diretor: br.com.zup.orangetalents.modelo.Diretor){
 //        this.total += diretor.bonificacao
 //    }
 }

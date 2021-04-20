@@ -1,4 +1,4 @@
-package modelo
+package br.com.zup.orangetalents.modelo
 
 abstract class Funcionario(
     val nome: String,

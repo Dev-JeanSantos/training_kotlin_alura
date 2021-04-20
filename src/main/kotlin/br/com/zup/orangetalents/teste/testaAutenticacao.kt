@@ -1,7 +1,7 @@
-import modelo.Cliente
-import modelo.Diretor
-import modelo.Gerente
-import modelo.SistemaInterno
+import br.com.zup.orangetalents.modelo.Cliente
+import br.com.zup.orangetalents.modelo.Diretor
+import br.com.zup.orangetalents.modelo.Gerente
+import br.com.zup.orangetalents.modelo.SistemaInterno
 
 fun testaAutenticacao(){
     val gerente = Gerente(

@@ -1,4 +1,4 @@
-package modelo
+package br.com.zup.orangetalents.modelo
 
 class Diretor(nome: String,
               cpf: String,

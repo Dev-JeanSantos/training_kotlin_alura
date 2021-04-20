@@ -1,6 +1,4 @@
-package modelo
-
-import modelo.Funcionario
+package br.com.zup.orangetalents.modelo
 
 class Auxiliar(nome: String,
                cpf: String,
