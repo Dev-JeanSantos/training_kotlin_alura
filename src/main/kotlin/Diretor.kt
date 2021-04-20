@@ -11,7 +11,7 @@ class Diretor(nome: String,
     cpf = cpf,
     salario = salario,
     senha = senha
-) {
+), Autenticavel {
 
     override val bonificacao: Double
         get() {
