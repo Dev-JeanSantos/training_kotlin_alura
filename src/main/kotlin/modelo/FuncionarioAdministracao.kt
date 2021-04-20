@@ -1,3 +1,5 @@
+package modelo
+
 abstract class FuncionarioAdministracao(
     nome: String,
     cpf: String,

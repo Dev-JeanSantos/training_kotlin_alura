@@ -1,11 +1,13 @@
-import kotlin.math.truncate
+package modelo
+
+import modelo.Funcionario
 
 class Auxiliar(nome: String,
                cpf: String,
                salario: Double,
                val senha: Int)
     //Herança de funcionário
-    :Funcionario(
+    : Funcionario(
     nome = nome,
     cpf = cpf,
     salario = salario

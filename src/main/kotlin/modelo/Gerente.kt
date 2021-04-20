@@ -1,16 +1,16 @@
-import kotlin.math.truncate
+package modelo
 
 class Gerente( nome: String,
                cpf: String,
                salario: Double,
                senha: Int)
     //Herança de funcionário
-    :FuncionarioAdministracao(
+    : FuncionarioAdministracao(
     nome = nome,
     cpf = cpf,
     salario = salario,
     senha = senha
-),Autenticavel {
+), Autenticavel {
     override fun autentica(senha: Int): Boolean {
       return super<FuncionarioAdministracao>.autentica(senha)
     }

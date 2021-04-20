@@ -1,3 +1,5 @@
+import modelo.*
+
 fun testaFuncionarios() {
     val funcionarioAlex: Funcionario = Analista(
         nome = "Jean",
@@ -41,7 +43,7 @@ fun testaFuncionarios() {
     println("Salario: ${funcionarioAlex.salario}")
     println("Bonificação: ${funcionarioAlex.bonificacao}")
 
-    println("-------------Dados do Gerente---------------")
+    println("-------------Dados do modelo.Gerente---------------")
     println("Nome: ${gerentePedro.nome}")
     println("Cpf: ${gerentePedro.cpf}")
     println("Salario: ${gerentePedro.salario}")
@@ -52,7 +54,7 @@ fun testaFuncionarios() {
         println("Falha na Autenticação")
     }
 
-    println("-------------Dados do Gerente---------------")
+    println("-------------Dados do modelo.Gerente---------------")
     println("Nome: ${gerenteMarcos.nome}")
     println("Cpf: ${gerenteMarcos.cpf}")
     println("Salario: ${gerenteMarcos.salario}")
@@ -63,14 +65,14 @@ fun testaFuncionarios() {
         println("Falha na Autenticação")
     }
 
-    println("-------------Dados do Diretor---------------")
+    println("-------------Dados do modelo.Diretor---------------")
     println("Nome: ${diretoraMarcia.nome}")
     println("Cpf: ${diretoraMarcia.cpf}")
     println("Salario: ${diretoraMarcia.salario}")
     println("Bonificação: ${diretoraMarcia.bonificacao}")
     println("Participação Anual dos Lucros: ${diretoraMarcia.plr}")
 
-    println("-------------Dados do Analista---------------")
+    println("-------------Dados do modelo.Analista---------------")
     println("Nome: ${analistaMaria.nome}")
     println("Cpf: ${analistaMaria.cpf}")
     println("Salario: ${analistaMaria.salario}")

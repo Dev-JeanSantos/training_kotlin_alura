@@ -1,4 +1,4 @@
-import kotlin.math.truncate
+package modelo
 
 class Diretor(nome: String,
               cpf: String,
@@ -6,7 +6,7 @@ class Diretor(nome: String,
               senha: Int,
               val plr: Double)
     //Herança de funcionário
-    :FuncionarioAdministracao(
+    : FuncionarioAdministracao(
     nome = nome,
     cpf = cpf,
     salario = salario,

@@ -1,3 +1,6 @@
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+
 fun testaContasDiferentes() {
     val contaCorrente = ContaCorrente(
         titular = "Melisa",
@@ -14,11 +17,11 @@ fun testaContasDiferentes() {
     contaCorrente.saque(100.00)
     contaPoupanca.saque(100.00)
 
-    println("Saldo Conta corrente: ${contaCorrente.saldo}")
-    println("Saldo Conta Poupança: ${contaPoupanca.saldo}")
+    println("Saldo modelo.Conta corrente: ${contaCorrente.saldo}")
+    println("Saldo modelo.Conta Poupança: ${contaPoupanca.saldo}")
 
     contaCorrente.tranfere(600.00, contaPoupanca)
 
-    println("Saldo Conta corrente: ${contaCorrente.saldo}")
-    println("Saldo Conta Poupança: ${contaPoupanca.saldo}")
+    println("Saldo modelo.Conta corrente: ${contaCorrente.saldo}")
+    println("Saldo modelo.Conta Poupança: ${contaPoupanca.saldo}")
 }

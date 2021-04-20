@@ -9,7 +9,7 @@ fun testaLacos() {
 
         println("Nome do Titular: $titular")
         println("Nome do Titular2: $titular2")
-        println("O numero da Conta: $numeroDaConta")
+        println("O numero da modelo.Conta: $numeroDaConta")
         titular2 = "Camilla Duarte"
         println("Nome do Titular2 mudou para: $titular2")
 
