@@ -1,7 +1,7 @@
 package br.com.zup.orangetalents.modelo
 
 class ContaPoupanca(
-    titular: String,
+    titular: Cliente,
     numero: Int,
 ) : Conta(
     titular = titular,

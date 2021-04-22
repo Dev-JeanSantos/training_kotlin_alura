@@ -1,13 +1,36 @@
+import br.com.zup.orangetalents.modelo.Cliente
 import br.com.zup.orangetalents.modelo.ContaCorrente
 import br.com.zup.orangetalents.modelo.ContaPoupanca
+import br.com.zup.orangetalents.modelo.Endereco
 
 fun testaContasDiferentes() {
+
+    val melissa = Cliente(
+        nome = "Melissa Duarte Santos",
+        cpf = "000.000.000-00",
+        senha = 3,
+        endereco = Endereco(
+            logradouro = "Rua Manoel Novis",
+            numero = 201
+        )
+    )
+
     val contaCorrente = ContaCorrente(
-        titular = "Melisa",
+        titular = melissa,
         numero = 9990
     )
+    contaCorrente.titular.nome="Mel"
+
     val contaPoupanca = ContaPoupanca(
-        titular = "Charles",
+        titular = Cliente(
+            nome = "Jean Charles Duarte Santos",
+            cpf = "111.111.111.-11",
+            senha = 4,
+            endereco = Endereco(
+                logradouro = "Rua João",
+                numero = 3992
+            )
+        ),
         numero = 9991
     )
 
@@ -17,11 +40,16 @@ fun testaContasDiferentes() {
     contaCorrente.saque(100.00)
     contaPoupanca.saque(100.00)
 
-    println("Saldo br.com.zup.orangetalents.modelo.Conta corrente: ${contaCorrente.saldo}")
-    println("Saldo br.com.zup.orangetalents.modelo.Conta Poupança: ${contaPoupanca.saldo}")
+    println("Nome correntista: ${contaCorrente.titular.nome}")
+    println("Endereço correntista: ${contaCorrente.titular.endereco.logradouro }")
+    println("numero correntista: ${contaCorrente.titular.endereco.numero }")
+    println("Saldo corrente: ${contaCorrente.saldo}")
+
+    println("Nome poupancista: ${contaPoupanca.titular.nome}")
+    println("Saldo Poupança: ${contaPoupanca.saldo}")
 
     contaCorrente.tranfere(600.00, contaPoupanca)
 
-    println("Saldo br.com.zup.orangetalents.modelo.Conta corrente: ${contaCorrente.saldo}")
-    println("Saldo br.com.zup.orangetalents.modelo.Conta Poupança: ${contaPoupanca.saldo}")
+    println("Saldo Conta corrente: ${contaCorrente.saldo}")
+    println("Saldo Conta Poupança: ${contaPoupanca.saldo}")
 }
