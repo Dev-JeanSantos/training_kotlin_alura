@@ -21,7 +21,8 @@ fun main() {
         numero = 2009,
         bairro = "Copacabana",
         cidade = "Rio de Janeiro",
-        estado = "RJ"
+        estado = "RJ",
+        cep = "2490-000"
     )
     println(endereco.equals(enderecoNovo))
     println(endereco.hashCode())
@@ -30,10 +31,3 @@ fun main() {
     println(enderecoNovo.toString())
 
 }
-
-
-
-
-
-
-
