@@ -6,12 +6,18 @@ class CalculadoraBonificacao {
         private set
 
     fun registra(funcionario: Funcionario){
-        this.total += funcionario.bonificacao
+            this.total += funcionario.bonificacao
     }
-//    fun registra(gerente: br.com.zup.orangetalents.modelo.Gerente){
-//        this.total += gerente.bonificacao
-//    }
-//    fun registra(diretor: br.com.zup.orangetalents.modelo.Diretor){
-//        this.total += diretor.bonificacao
-//    }
+
+    /*************USO DO ANY*****************
+    fun registra(funcionario: Any){
+        Casting com Any atraves do as
+        funcionario as Funcionario
+
+        Casting e Validação do Any atraves do is
+        Smart Test
+        if (funcionario is Funcionario) {
+            this.total += funcionario.bonificacao
+        }
+    }*/
 }

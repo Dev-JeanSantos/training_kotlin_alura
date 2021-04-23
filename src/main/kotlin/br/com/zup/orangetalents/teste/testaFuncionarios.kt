@@ -43,7 +43,7 @@ fun testaFuncionarios() {
     println("Salario: ${funcionarioAlex.salario}")
     println("Bonificação: ${funcionarioAlex.bonificacao}")
 
-    println("-------------Dados do br.com.zup.orangetalents.modelo.Gerente---------------")
+    println("-------------Dados do Gerente---------------")
     println("Nome: ${gerentePedro.nome}")
     println("Cpf: ${gerentePedro.cpf}")
     println("Salario: ${gerentePedro.salario}")
@@ -54,7 +54,7 @@ fun testaFuncionarios() {
         println("Falha na Autenticação")
     }
 
-    println("-------------Dados do br.com.zup.orangetalents.modelo.Gerente---------------")
+    println("-------------Dados do Gerente---------------")
     println("Nome: ${gerenteMarcos.nome}")
     println("Cpf: ${gerenteMarcos.cpf}")
     println("Salario: ${gerenteMarcos.salario}")
@@ -65,14 +65,14 @@ fun testaFuncionarios() {
         println("Falha na Autenticação")
     }
 
-    println("-------------Dados do br.com.zup.orangetalents.modelo.Diretor---------------")
+    println("-------------Dados do Diretor---------------")
     println("Nome: ${diretoraMarcia.nome}")
     println("Cpf: ${diretoraMarcia.cpf}")
     println("Salario: ${diretoraMarcia.salario}")
     println("Bonificação: ${diretoraMarcia.bonificacao}")
     println("Participação Anual dos Lucros: ${diretoraMarcia.plr}")
 
-    println("-------------Dados do br.com.zup.orangetalents.modelo.Analista---------------")
+    println("-------------Dados do Analista---------------")
     println("Nome: ${analistaMaria.nome}")
     println("Cpf: ${analistaMaria.cpf}")
     println("Salario: ${analistaMaria.salario}")
@@ -85,6 +85,7 @@ fun testaFuncionarios() {
     calculador.registra(gerenteMarcos)
     calculador.registra(gerentePedro)
     calculador.registra(diretoraMarcia)
+
 
     println("Total de Bonificações a todos funcionarios: ${calculador.total}")
 }

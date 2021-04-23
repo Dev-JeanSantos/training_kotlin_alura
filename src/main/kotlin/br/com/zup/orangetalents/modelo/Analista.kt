@@ -13,7 +13,6 @@ class Analista(nome: String,
 
     override val bonificacao: Double
         get() {
-            println("Bonificação br.com.zup.orangetalents.modelo.Analista")
             return salario * 0.1
         }
 
