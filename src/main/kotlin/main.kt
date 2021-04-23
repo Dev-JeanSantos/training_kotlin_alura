@@ -3,30 +3,32 @@ import br.com.zup.orangetalents.modelo.Endereco
 //*******IMPORTANTE****************
 //Tudo no Kotlin são objetos (Classes)
 
-
 fun main() {
 
-    //Sobrecargas
-//    println()
-//    println(1)
-//    println(1.0)
-//    println(false)
-//    println("Olá")
+    //Uso do Equals com Any = Compara as variveis
+    //Uso do hashCode com Any = mostra a identidade do Objeto
+    //Uso do toString com Any = mostra a impressão do Objeto
+    //
+    var endereco = Endereco(logradouro = "Rua Manoel Novis",
+        numero = 201,
+        bairro = "Centro",
+        cidade = "Tangua",
+        estado = "RJ",
+        cep = "2490-000")
 
-    var endereco = Endereco()
+    var enderecoNovo = Endereco(
+        logradouro = "Praça Mauá",
+        numero = 2009,
+        bairro = "Copacabana",
+        cidade = "Rio de Janeiro",
+        estado = "RJ"
+    )
+    println(endereco.equals(enderecoNovo))
+    println(endereco.hashCode())
+    println(enderecoNovo.hashCode())
+    println(endereco.toString())
+    println(enderecoNovo.toString())
 
-    imprime(Unit)
-    imprime(1)
-    imprime(1.0)
-    imprime(endereco)
-
-
-    testaFuncionarios()
-
-}
-
-fun imprime(valor: Any): Unit{
-    println(valor)
 }
 
 
