@@ -1,33 +1,33 @@
+import br.com.zup.orangetalents.exception.SaldoInsuficienteException
 import br.com.zup.orangetalents.modelo.Endereco
+import java.lang.Exception
 
 //*******IMPORTANTE****************
 //Tudo no Kotlin são objetos (Classes)
 
 fun main() {
+    println("Inicio funçao Main")
+    testaComportamentoContas()
+    println("Fim funçao Main")
+}
+fun funcao1() {
+    println("Inicio funçao 1")
+    try {
+        funcao2()
+    }catch (e: SaldoInsuficienteException){
+        e.printStackTrace()
+        println("Minha Exception foi estourada")
+    }
+    println("Fim funçao 1")
+}
 
-    //Uso do Equals com Any = Compara as variveis
-    //Uso do hashCode com Any = mostra a identidade do Objeto
-    //Uso do toString com Any = mostra a impressão do Objeto
-    //
-    var endereco = Endereco(logradouro = "Rua Manoel Novis",
-        numero = 201,
-        bairro = "Centro",
-        cidade = "Tangua",
-        estado = "RJ",
-        cep = "2490-000")
-
-    var enderecoNovo = Endereco(
-        logradouro = "Praça Mauá",
-        numero = 2009,
-        bairro = "Copacabana",
-        cidade = "Rio de Janeiro",
-        estado = "RJ",
-        cep = "2490-000"
-    )
-    println(endereco.equals(enderecoNovo))
-    println(endereco.hashCode())
-    println(enderecoNovo.hashCode())
-    println(endereco.toString())
-    println(enderecoNovo.toString())
-
+fun funcao2() {
+    println("Inicio funçao 2")
+        for (i in 1..5) {
+            println(i)
+            val endereco = Any()
+            //Lançamento das exceptions
+            throw SaldoInsuficienteException()
+        }
+    println("Fim função 2")
 }

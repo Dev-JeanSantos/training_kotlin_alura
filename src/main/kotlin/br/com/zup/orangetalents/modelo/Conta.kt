@@ -1,5 +1,7 @@
 package br.com.zup.orangetalents.modelo
 
+import br.com.zup.orangetalents.exception.SaldoInsuficienteException
+
 //Variavel Global pode ser visualizada por todos mas apenas alterada por sua classe
 //var totalContas = 0
 //    private set
@@ -38,17 +40,15 @@ abstract class Conta(
 
     abstract fun saque(valor: Double)
 
-    fun tranfere(valor: Double, contaDestino: Conta): Boolean {
+    fun tranfere(valor: Double, contaDestino: Conta) {
 
         println("------Movimentação de Transferência------")
-        if (saldo >= valor) {
-            saldo -= valor
-            contaDestino.deposita(valor)
-            print("Valor depositado = ")
-            println(valor)
-            return true
+        if(saldo < valor){
+            throw SaldoInsuficienteException()
         }
-        // println("Voce não possui saldo suficiente!")
-        return false
+        saldo -= valor
+        contaDestino.deposita(valor)
+        print("Valor depositado = ")
+        println(valor)
     }
 }
