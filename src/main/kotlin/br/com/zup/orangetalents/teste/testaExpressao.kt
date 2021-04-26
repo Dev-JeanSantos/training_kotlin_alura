@@ -1,9 +1,6 @@
 package br.com.zup.orangetalents.teste
 
-import funcao1
-
 fun testaExpressao() {
-    println("Inicio main")
 
     val entrada: String = "1"
 
