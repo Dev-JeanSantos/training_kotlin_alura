@@ -1,5 +1,6 @@
 package br.com.zup.orangetalents.modelo
 
+import br.com.zup.orangetalents.exception.FalhaAutenticacaoException
 import br.com.zup.orangetalents.exception.SaldoInsuficienteException
 
 //Variavel Global pode ser visualizada por todos mas apenas alterada por sua classe
@@ -9,7 +10,7 @@ import br.com.zup.orangetalents.exception.SaldoInsuficienteException
 abstract class Conta(
     var titular: Cliente,
     var numero: Int
-) {
+): Autenticavel {
     var saldo = 0.0
         protected set
 
@@ -21,6 +22,10 @@ abstract class Conta(
    companion object Contador{
         var total = 0
             private set
+    }
+
+    override fun autentica(senha: Int): Boolean {
+        return titular.autentica(senha)
     }
 
     init {
@@ -40,12 +45,18 @@ abstract class Conta(
 
     abstract fun saque(valor: Double)
 
-    fun tranfere(valor: Double, contaDestino: Conta) {
+    fun tranfere(valor: Double, contaDestino: Conta, senha: Int) {
 
         println("------Movimentação de Transferência------")
         if(saldo < valor){
-            throw SaldoInsuficienteException()
+            throw SaldoInsuficienteException(mensagem = "Saldo Insuficiente para a transfêrecia! " +
+                    "Seu saldo atual é ${saldo} e o valor a ser transferido é ${valor}")
         }
+
+        if (!autentica(senha)){
+            throw FalhaAutenticacaoException()
+        }
+
         saldo -= valor
         contaDestino.deposita(valor)
         print("Valor depositado = ")

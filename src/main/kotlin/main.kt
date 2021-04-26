@@ -1,6 +1,4 @@
 import br.com.zup.orangetalents.exception.SaldoInsuficienteException
-import br.com.zup.orangetalents.modelo.Endereco
-import java.lang.Exception
 
 //*******IMPORTANTE****************
 //Tudo no Kotlin são objetos (Classes)

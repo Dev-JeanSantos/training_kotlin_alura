@@ -1,4 +1,5 @@
 package br.com.zup.orangetalents.exception
 
-class SaldoInsuficienteException : Exception("O Saldo não é suficiente!"){
-}
+class SaldoInsuficienteException(
+    mensagem: String= "O Saldo é Insuficiênte"
+) : Exception(mensagem)

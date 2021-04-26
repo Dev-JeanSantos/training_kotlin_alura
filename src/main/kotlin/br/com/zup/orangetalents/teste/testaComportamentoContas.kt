@@ -1,3 +1,4 @@
+import br.com.zup.orangetalents.exception.FalhaAutenticacaoException
 import br.com.zup.orangetalents.exception.SaldoInsuficienteException
 import br.com.zup.orangetalents.modelo.Cliente
 import br.com.zup.orangetalents.modelo.ContaCorrente
@@ -56,14 +57,17 @@ fun testaComportamentoContas() {
 
 
     try {
-        (contaJean.tranfere(4849.00, contaCamilla))
+        (contaJean.tranfere(4840.00, contaCamilla, 2))
             println("Transferência efetuada com sucesso")
-    }catch (e: SaldoInsuficienteException){
+    }catch (e: SaldoInsuficienteException) {
         println("Falha na Transferência!")
         println("Saldo Insuficiente")
         e.printStackTrace()
+    }catch (e: FalhaAutenticacaoException){
+        println("Falha na Transferência!")
+        println("Falha na Autenticação!!")
+        e.printStackTrace()
     }
-
 
     println("-----------------------")
     println("-----------------------")
