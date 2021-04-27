@@ -60,6 +60,22 @@ fun main() {
    println("---------ForEach------------")
    println(menorIdade)
 
+   //Uso do DoubleArray
+   val salarios: DoubleArray = doubleArrayOf(1350.0, 2890.0, 5000.0, 10000.0, 3432.0)
+   val aumento: Double = 1.1
+   val indice: Int = 0
 
+   for (indice in salarios.indices){
+      salarios[indice] = salarios[indice] * aumento
+   }
+   println("---------DoubleArray------------")
+   println(salarios.contentToString())
+
+   //Uso do ForEachIndexd
+   salarios.forEachIndexed{i , salario ->
+      salarios[i] = salario * aumento
+   }
+   println("---------ForEachIndexed------------")
+   println(salarios.contentToString())
 }
 
