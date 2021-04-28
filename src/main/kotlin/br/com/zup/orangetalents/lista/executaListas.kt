@@ -3,6 +3,9 @@ package br.com.zup.orangetalents.lista
 import br.com.zup.orangetalents.testalivros
 
 fun main(){
-    prateleira.organizaPorAutor().impressaoFormatada()
-    prateleira2.organizarPorPublicacao().impressaoFormatada()
+    val organizaPorAutor = prateleira.organizaPorAutor()
+    val organizarPorPublicacao = prateleira.organizarPorPublicacao()
+
+    organizaPorAutor.impressaoFormatada()
+    organizarPorPublicacao.impressaoFormatada()
 }
