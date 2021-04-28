@@ -37,14 +37,27 @@ fun main(){
                 editora = "Tanguá News"
         )
     )
-
+    println("Lista de livros:")
     livros.impressaoFormatada()
     //Com remove removeremos um item de nossa lista
     livros.remove(livro1)
+    println("Lista com o primeiro livro removido:")
     livros.impressaoFormatada()
+
+    //Com o sorted faremos a ordenção de nossa lista
+    //lembrando que tem que implmentar a extensão do comparable
+    val ordenadoAnoPublicação: List<Livro> = livros.sorted()
+    println("Lista Ordenada por Ano de publicação:")
+    ordenadoAnoPublicação.impressaoFormatada()
+
+    //Com o sortedBy faremos a ordenção de nossa lista mais simplificada
+    val ordenadoTitulo = livros.sortedBy { it.titulo }
+    println("Lista Ordenada por Título:")
+    ordenadoTitulo.impressaoFormatada()
+
 }
 
-fun MutableList<Livro>.impressaoFormatada(){
+fun List<Livro>.impressaoFormatada(){
 
     //joinToString => personifica a saída de uma lista
     val formatada = this.joinToString(separator = "\n") {

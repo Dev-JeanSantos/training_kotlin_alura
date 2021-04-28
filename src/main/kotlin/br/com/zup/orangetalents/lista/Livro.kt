@@ -7,4 +7,8 @@ data class Livro (
     val autor: String,
     val anoPublicacao: Long,
     val editora: String? = null,
-        )
+        ): Comparable<Livro> { //Para que possamos ordenar é necessário extends Comparable
+    override fun compareTo(other: Livro): Int {
+        return this.anoPublicacao.compareTo(other.anoPublicacao)
+    }
+}
