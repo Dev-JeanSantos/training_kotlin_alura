@@ -3,10 +3,15 @@ package br.com.zup.orangetalents.colecoes
 fun testaTipoColecoes() {
 
     val banco = BancoNomes()
+    val nomeSalvos:Collection<String> = banco.nomes
+
     banco.salva("Alex")
-    println(banco.nomes)
+    println(nomeSalvos)
     println(BancoNomes().nomes)
 
+}
+
+fun testaCopias(){
     val nomes: Collection<String> = mutableListOf(
         "Alex",
         "Fran",
