@@ -38,9 +38,18 @@ fun main(){
         )
     )
 
-    println(livros)
-    println("-------------------****************---------------------------")
+    livros.impressaoFormatada()
     //Com remove removeremos um item de nossa lista
     livros.remove(livro1)
-    println(livros)
+    livros.impressaoFormatada()
+}
+
+fun MutableList<Livro>.impressaoFormatada(){
+
+    //joinToString => personifica a saída de uma lista
+    val formatada = this.joinToString(separator = "\n") {
+        " - ${it.titulo} de ${it.autor}"
+    }
+
+    println("**************LISTA DE LIVROS*******************\n$formatada")
 }
