@@ -13,17 +13,28 @@ fun main() {
       println("-------------------------------------------")
       println("Salarios com aumento: ${salariosComAumento.contentToString()}")
 
-   val gastoManesalInicial = salariosComAumento.somatoria()
-   println("Somatório inicial $gastoManesalInicial")
+      //Utilização da função que criamos somatoria, incrementar todos salarios reajustados
+      val gastoMensalInicial = salariosComAumento.somatoria()
+    println("-------------------------------------------")
+      println("Somatório inicial $gastoMensalInicial")
+
+    //função que irá calcular o total de todos os salarios ajustados durante 6 meses
+    // utilizando a função fold
+    val meses = "6".toBigDecimal()
+    val salarioPrazo = salariosComAumento.fold(gastoMensalInicial) { acumulador, salario ->
+        acumulador + (salario * meses).setScale(2, RoundingMode.UP)
+    }
+    println("-------------------------------------------")
+    println("O Custo salarial nos proximos 6 meses: $salarioPrazo")
 }
 
 fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal) =
-   if (salario < "5000.00".toBigDecimal()) {
-      salario + "500.00".toBigDecimal()
-   } else {
-      (salario * aumento)
-         .setScale(2, RoundingMode.UP)
-   }
+    if (salario < "5000.00".toBigDecimal()) {
+        salario + "500.00".toBigDecimal()
+    } else {
+        (salario * aumento)
+            .setScale(2, RoundingMode.UP)
+    }
 
 //Extension Function
 //reduce irá receber valores e nesse caso irá somar cada incremento
