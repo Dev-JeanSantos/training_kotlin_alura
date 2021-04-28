@@ -44,6 +44,15 @@ fun testalivros(){
     println("--------------***********-------------------------")
     println("Pesquisa por nome que só traz o titulo:")
     println(titulo)
+
+    //Trata campos nulos no objeto
+    //GroupBy
+    println("--------------***********-------------------------")
+    println("Tratamento dos campos nulos do Objeto:")
+    listaLivros.groupBy { it.editora ?: "Editora Desconhecida " }.
+    forEach{(editora: String?, livros: List<Livro>) ->
+        println("$editora: ${livros.joinToString { it.titulo }}")
+    }
 }
 
 
