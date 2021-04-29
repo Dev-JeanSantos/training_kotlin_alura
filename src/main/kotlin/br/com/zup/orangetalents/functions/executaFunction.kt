@@ -1,70 +1,41 @@
 package br.com.zup.orangetalents.functions
 
+import br.com.zup.orangetalents.modelo.Endereco
+
 fun main(){
-    testeTipoFuncaoLambda()
-    testeTipoFuncaoAnonima()
-    testerVariosReturnsLambda()
-    testeVariosRetornosAnonima()
 
-}
+    println("**************** Exemplo sem a Função de Alta Ordem **************************")
+    val endereco = Endereco(logradouro = "Rua Manoel Novis", numero = 201)
+    val enderecoMaiusculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
+    println("**************** Exemplo 1 **************************")
+    println(endereco)
+    println("**************** Exemplo 2 **************************")
+    println(enderecoMaiusculo)
 
-fun testeVariosRetornosAnonima() {
-    println("*********************Calculo com varios returns função Anonima************************")
-    val calculaBonificacaoAnonima: (Salario: Double) -> Double = fun(salario): Double {
-        if (salario > 5000) {
-            return salario + 2000.00
+    val enderecoMaiusculoAltaOrdem = Endereco(logradouro = "Rua Manoel Novis", numero = 201).let { endereco ->
+        "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
+    }
+    println("**************** Exemplo com Função de Alta Ordem **************************")
+    println(enderecoMaiusculoAltaOrdem)
+
+    Endereco(logradouro = "Rua Manoel Novis", numero = 201).let { endereco ->
+        "${endereco.logradouro}, ${endereco.numero}".toUpperCase().let{ enderecoMaiusculoAltaOrdem ->
+            println("**************** Exemplo com Função de Alta Ordem 2 **************************")
+            println(enderecoMaiusculoAltaOrdem)
         }
-        return salario + 1000.00
     }
-    println(calculaBonificacaoAnonima(1000.00))
-}
 
-fun testerVariosReturnsLambda() {
-    println("*********************Calculo com varios returns utilizando função Lambda************************")
-    val calculaBonificacaoLambda: (Salario: Double) -> Double = testeLambda@{ salario ->
+    println("**************** Exemplo com Função de Alta Ordem 3 **************************")
 
-        if (salario > 5000) {
-            return@testeLambda salario + 2000.00
-        }
-        return@testeLambda salario + 1000.00
+    Endereco(logradouro = "Rua Manoel Novis", numero = 201).let { endereco ->
+        "${endereco.logradouro}, ${endereco.numero}".toUpperCase().let(::println)
     }
-    println(calculaBonificacaoLambda(6000.00))
+
+    println("**************** Exemplo com Função de Alta Ordem 4 **************************")
+    listOf(Endereco(complemento = "casa"),
+        Endereco(),
+        Endereco(complemento = "Apartamento"))
+        .filter { endereco -> endereco.complemento.isNotEmpty()}.let(::println)
+
 }
 
-fun testeTipoFuncaoAnonima() {
-    println("*********************Chamada de uma Anônima************************")
-    val minhaFuncaoAnonima = fun(a: Int, b: Int, _: Int): Int {
-       return a + b
-    }
-    println(minhaFuncaoAnonima(2, 3 ,1))
-}
-
-fun testeTipoFuncaoLambda() {
-    println("*********************Chamada de um Lambda************************")
-    //Caso vc tenha parametros opcionais é necessário colocar o "UNDERLINE _"
-    val minhaFuncaoLambda = { a: Int, b: Int, _: Int ->
-        a + b
-    }
-    println(minhaFuncaoLambda(10, 90, 1))
-}
-
-fun testeTipoFuncaoReferencia() {
-    println("*********************Chamada de uma Função************************")
-    val minhaFuncao: (Int, Int) -> Int = ::soma
-    println(minhaFuncao(5, 5))
-}
-fun testeTipoFuncaoClasse() {
-    println("*********************Chamada de uma Classe************************")
-    val minhaFuncaoClasse: (Int, Int) -> Int = Soma()
-    println(minhaFuncaoClasse(10, 30))
-}
-
-fun soma(a: Int, b: Int) : Int{
-    return a + b
-}
-
-class Soma : (Int, Int) -> Int{
-    override fun invoke(p1: Int, p2: Int): Int {
-        return p1 + p2
-    }
-}
