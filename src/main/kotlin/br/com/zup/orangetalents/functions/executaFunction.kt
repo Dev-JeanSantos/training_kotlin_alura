@@ -1,6 +1,9 @@
 package br.com.zup.orangetalents.functions
 
+import br.com.zup.orangetalents.modelo.Autenticavel
 import br.com.zup.orangetalents.modelo.Endereco
+import br.com.zup.orangetalents.modelo.SistemaInterno
+import java.util.*
 
 fun main(){
 
@@ -36,6 +39,17 @@ fun main(){
         Endereco(),
         Endereco(complemento = "Apartamento"))
         .filter { endereco -> endereco.complemento.isNotEmpty()}.let(::println)
+
+
+    println("**************** Exemplo com Função de Alta Ordem no Autenticado **************************")
+    val testaAuteticado = object : Autenticavel {
+        val senha = 1234
+        override fun autentica(senha: Int) = this.senha == senha
+    }
+
+    SistemaInterno().entra(testaAuteticado, 1234){
+        println("Realizar Pagamento")
+    }
 
 }
 
