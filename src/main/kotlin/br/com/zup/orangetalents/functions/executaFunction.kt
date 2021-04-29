@@ -3,6 +3,32 @@ package br.com.zup.orangetalents.functions
 fun main(){
     testeTipoFuncaoLambda()
     testeTipoFuncaoAnonima()
+    testerVariosReturnsLambda()
+    testeVariosRetornosAnonima()
+
+}
+
+fun testeVariosRetornosAnonima() {
+    println("*********************Calculo com varios returns função Anonima************************")
+    val calculaBonificacaoAnonima: (Salario: Double) -> Double = fun(salario): Double {
+        if (salario > 5000) {
+            return salario + 2000.00
+        }
+        return salario + 1000.00
+    }
+    println(calculaBonificacaoAnonima(1000.00))
+}
+
+fun testerVariosReturnsLambda() {
+    println("*********************Calculo com varios returns utilizando função Lambda************************")
+    val calculaBonificacaoLambda: (Salario: Double) -> Double = testeLambda@{ salario ->
+
+        if (salario > 5000) {
+            return@testeLambda salario + 2000.00
+        }
+        return@testeLambda salario + 1000.00
+    }
+    println(calculaBonificacaoLambda(6000.00))
 }
 
 fun testeTipoFuncaoAnonima() {
