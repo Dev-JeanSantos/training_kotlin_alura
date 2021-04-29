@@ -1,25 +1,25 @@
 package br.com.zup.orangetalents.functions
 
 fun main(){
-
-    testeTipoFuncaoReferencia()
-    testeTipoFuncaoClasse()
+    testeTipoFuncaoLambda()
+    testeTipoFuncaoAnonima()
 }
 
 fun testeTipoFuncaoAnonima() {
     println("*********************Chamada de uma Anônima************************")
-    val minhaFuncaoAnonima: () -> Unit = fun() {
-        println("Minha função Anonima!")
+    val minhaFuncaoAnonima = fun(a: Int, b: Int, _: Int): Int {
+       return a + b
     }
-    println(minhaFuncaoAnonima())
+    println(minhaFuncaoAnonima(2, 3 ,1))
 }
 
 fun testeTipoFuncaoLambda() {
-    println("*********************Chamada de uma Lambda************************")
-    val minhaFuncaoLambda = {
-        println("Minha função Lambda!")
+    println("*********************Chamada de um Lambda************************")
+    //Caso vc tenha parametros opcionais é necessário colocar o "UNDERLINE _"
+    val minhaFuncaoLambda = { a: Int, b: Int, _: Int ->
+        a + b
     }
-    println(minhaFuncaoLambda())
+    println(minhaFuncaoLambda(10, 90, 1))
 }
 
 fun testeTipoFuncaoReferencia() {
