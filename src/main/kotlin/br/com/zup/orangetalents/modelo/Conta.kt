@@ -29,8 +29,6 @@ abstract class Conta(
     }
 
     init {
-        println("Criando Conta")
-
         //foi retirada a variavel global
         // totalContas++
 
